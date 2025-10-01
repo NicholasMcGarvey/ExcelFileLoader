@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A0B3F80-0E3A-4A2F-B5B7-7E6B4F0BE9E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ExcelLoader.ExcelAddIn</RootNamespace>
+    <AssemblyName>ExcelLoader.ExcelAddIn</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <OfficeApplication>Excel</OfficeApplication>
+    <LoadBehavior>3</LoadBehavior>
+    <RibbonType>Microsoft.Office.Tools.Ribbon.RibbonXML</RibbonType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools" />
+    <Reference Include="Microsoft.Office.Tools.Common" />
+    <Reference Include="Microsoft.Office.Tools.Excel" />
+    <Reference Include="office" />
+    <Reference Include="Office" />
+    <Reference Include="Microsoft.Vbe.Interop" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ThisAddIn.cs" />
+    <Compile Include="Ribbon.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ribbon.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

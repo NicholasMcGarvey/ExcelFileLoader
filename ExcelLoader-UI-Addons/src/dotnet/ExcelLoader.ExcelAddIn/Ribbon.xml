@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<customUI xmlns='http://schemas.microsoft.com/office/2009/07/customui' onLoad='OnLoad'>
+  <ribbon>
+    <tabs>
+      <tab id='ExcelLoaderTab' label='ExcelLoader'>
+        <group id='grpActions' label='Actions'>
+          <button id='btnSelect' label='Select File' size='large' onAction='OnSelect' />
+          <button id='btnPreview' label='Preview Mapping' size='large' onAction='OnPreview' />
+          <button id='btnDryRun' label='Dry Run' size='large' onAction='OnDryRun' />
+          <button id='btnLoad' label='Load' size='large' onAction='OnLoadClick' />
+          <button id='btnErrors' label='View Errors' size='large' onAction='OnErrors' />
+        </group>
+        <group id='grpSettings' label='Settings'>
+          <button id='btnSettings' label='Settings' onAction='OnSettings' />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>

@@ -1,0 +1,44 @@
+<Window x:Class="ExcelLoader.Admin.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ExcelLoader Admin" Height="720" Width="1080">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="8">
+            <TextBlock Text="Connection:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+            <TextBox x:Name="txtConn" Width="600" Margin="0,0,12,0"/>
+            <Button Content="Save" Width="80" Click="SaveConn_Click"/>
+            <Button Content="Test" Width="80" Margin="8,0,0,0" Click="TestConn_Click"/>
+        </StackPanel>
+        <TabControl>
+            <TabItem Header="FileGroups">
+                <Grid Margin="8"><DataGrid x:Name="gridFileGroups" AutoGenerateColumns="True" IsReadOnly="False" /></Grid>
+            </TabItem>
+            <TabItem Header="Entities">
+                <Grid Margin="8"><DataGrid x:Name="gridEntities" AutoGenerateColumns="True" IsReadOnly="False" /></Grid>
+            </TabItem>
+            <TabItem Header="FileSpecs">
+                <Grid Margin="8"><DataGrid x:Name="gridFileSpecs" AutoGenerateColumns="True" IsReadOnly="False" /></Grid>
+            </TabItem>
+            <TabItem Header="FieldMaps">
+                <Grid Margin="8"><DataGrid x:Name="gridFieldMaps" AutoGenerateColumns="True" IsReadOnly="False" /></Grid>
+            </TabItem>
+            <TabItem Header="Run">
+                <StackPanel Margin="8">
+                    <TextBlock Text="File Path" />
+                    <TextBox x:Name="txtPath" />
+                    <TextBlock Text="FileGroup" />
+                    <TextBox x:Name="txtFG" Text="COL" />
+                    <TextBlock Text="Entity" />
+                    <TextBox x:Name="txtEnt" Text="LenderA" />
+                    <TextBlock Text="LoadType" />
+                    <TextBox x:Name="txtLT" Text="daily" />
+                    <WrapPanel Margin="0,8,0,0">
+                        <Button Content="Dry Run" Width="100" Click="DryRun_Click"/>
+                        <Button Content="Load" Width="100" Margin="8,0,0,0" Click="Load_Click"/>
+                    </WrapPanel>
+                    <TextBox x:Name="txtOutput" Height="240" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
